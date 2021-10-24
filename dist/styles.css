@@ -119,6 +119,12 @@ body {
   overflow: hidden;
   position: relative;
 }
+.countdown .container .box .time {
+  font-size: 4rem;
+  position: relative;
+  top: 7px;
+  color: #db5778;
+}
 .countdown .container .box .top {
   background: #1e1f29;
   width: 100%;
@@ -130,6 +136,11 @@ body {
   height: 50%;
   position: absolute;
   bottom: 0;
+  overflow: hidden;
+}
+.countdown .container .box .bottom .time {
+  color: #fb6087;
+  transform: translateY(-3rem);
 }
 .countdown .container .box::before {
   content: "";

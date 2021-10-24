@@ -37,12 +37,19 @@
       //   from{transform:rotate3d(0)}
       //   to{transform:rotate3d(1,2,0,60deg)}
       // }
+      .time{
+        font-size: 4rem;
+        // transform: translateY(5px);
         position: relative;
+        top: 7px;
+        color:hsl(345, 65%, 60%);
+      }
+      position: relative;
       & .top {
         background: hsl(235, 16%, 14%);
         width: 100%;
         height: 50%;
-
+        
       }
       & .bottom {
         background: hsl(235, 21%, 22%);
@@ -50,6 +57,11 @@
         height: 50%;
         position: absolute;
         bottom: 0;
+        overflow: hidden;
+        .time{
+          color:hsl(345, 95%, 68%);
+          transform: translateY(-3rem);
+        }
       }
       &::before{
         content: "";
