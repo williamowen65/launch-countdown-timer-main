@@ -1,5 +1,31 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #191a24;
+}
+
 .countdown {
   display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

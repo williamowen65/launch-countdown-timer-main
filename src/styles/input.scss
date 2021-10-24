@@ -1,3 +1,19 @@
+body {
+  margin: 0;
+}
+
+h1{
+  text-align: center;
+  margin: 0;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%)
+}
 
 @import './components/background.scss';
 @import './components/countdown.scss';
