@@ -27,6 +27,8 @@
       height: $box-size;
       margin: 0 auto;
       margin-bottom: 30px;
+      border-radius: 5px;
+      overflow: hidden;
 
       // Flip will be some combo of....
       // transform-origin: bottom right 60px;
@@ -37,16 +39,36 @@
       // }
         position: relative;
       & .top {
-        background: blue;
+        background: hsl(235, 16%, 14%);
         width: 100%;
         height: 50%;
+
       }
       & .bottom {
-        background: rgb(200, 200, 212);
+        background: hsl(235, 21%, 22%);
         width: 100%;
         height: 50%;
         position: absolute;
         bottom: 0;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        border-radius: 0 50% 50% 0;
+        width:5px;
+        height:10px;
+        background: hsl(234, 17%, 12%);
+        transform: translate(-72px, 67px);
+        z-index: 1;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        border-radius: 50% 0 0 50%;
+        width:5px;
+        height:10px;
+        background: hsl(234, 17%, 12%);
+        transform: translate(67px, -5px);
       }
     }
     .label {
