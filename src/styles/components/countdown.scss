@@ -2,7 +2,8 @@
   height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  // justify-content: space-around;
+  justify-content: center;
 }
 .countdown{
   display: flex;
@@ -10,18 +11,24 @@
   .container {
     max-width: 100vw;
     padding: 0 0.5rem;
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &:last-of-type {
+      padding-right: 0;
+    }
     overflow: hidden;
     font-size: 0.55rem;
     text-align: center;
     .box{
       $box-size: 6rem;
       background: black;
-      width: $box-size;
+      min-width: $box-size;
       height: $box-size;
       margin: 0 auto;
       margin-bottom: 30px;
 
-      //Flip will be some combo of....
+      // Flip will be some combo of....
       // transform-origin: bottom right 60px;
       // animation: rotate3d 1s forwards;
       // @keyframes rotate3d{

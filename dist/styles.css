@@ -1,10 +1,25 @@
 :root {
-  font-size: 12px;
+  font-size: 24px;
   transition: all 0.5s;
 }
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 655px) {
   :root {
-    font-size: 24px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 550px) {
+  :root {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 530px) {
+  :root {
+    font-size: 12px;
   }
 }
 
@@ -22,6 +37,7 @@ h1 {
   margin: 0 20px;
   color: white;
   font-size: 1.6rem;
+  padding-bottom: 3rem;
 }
 
 .attribution, .icons {
@@ -73,7 +89,7 @@ body {
   height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .countdown {
@@ -87,9 +103,15 @@ body {
   font-size: 0.55rem;
   text-align: center;
 }
+.countdown .container:first-of-type {
+  padding-left: 0;
+}
+.countdown .container:last-of-type {
+  padding-right: 0;
+}
 .countdown .container .box {
   background: black;
-  width: 6rem;
+  min-width: 6rem;
   height: 6rem;
   margin: 0 auto;
   margin-bottom: 30px;

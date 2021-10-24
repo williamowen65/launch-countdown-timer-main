@@ -1,7 +1,17 @@
 :root{
-  font-size: 12px;
-  @media screen and (min-width: 600px) {
-    font-size: 24px;
+  font-size: 24px;
+ 
+  @media screen and (max-width: 655px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 17px;
+  }
+  @media screen and (max-width: 550px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 530px) {
+    font-size: 12px;
   }
   transition: all 0.5s;
 
@@ -20,6 +30,7 @@ h1{
   margin: 0 20px;
   color: hsl(0, 0%, 100%);
   font-size: 1.6rem;
+  padding-bottom: 3rem;
   // @media screen and (min-width: 600px) {
   //   font-size: 2rem;
   // }
