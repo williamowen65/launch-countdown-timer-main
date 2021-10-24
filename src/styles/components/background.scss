@@ -4,4 +4,16 @@ body {
   flex-direction: column;
   justify-content: center;
   background: hsl(234, 17%, 12%);
+  background-image: url('bg-stars.svg');
+  background-repeat: repeat-y;
+  background-size: contain;
+  .background-stars{
+    position: absolute;
+    width: 100vw;
+  }
+  .background-hills{
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+  }
 }

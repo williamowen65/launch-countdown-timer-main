@@ -7,12 +7,23 @@ h1 {
   margin: 0;
 }
 
-.attribution {
+.attribution, .icons {
   position: absolute;
-  bottom: 10px;
   left: 50%;
   white-space: nowrap;
   transform: translateX(-50%);
+}
+
+.attribution {
+  bottom: 10px;
+}
+
+.icons {
+  bottom: 30px;
+}
+.icons img {
+  padding: 0 10px;
+  cursor: pointer;
 }
 
 body {
@@ -21,6 +32,18 @@ body {
   flex-direction: column;
   justify-content: center;
   background: #191a24;
+  background-image: url("bg-stars.svg");
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+body .background-stars {
+  position: absolute;
+  width: 100vw;
+}
+body .background-hills {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
 }
 
 .countdown {

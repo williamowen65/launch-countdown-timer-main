@@ -7,13 +7,27 @@ h1{
   margin: 0;
 }
 
-.attribution {
+.icons {
+
+}
+
+.attribution, .icons {
   position: absolute;
-  bottom: 10px;
   left: 50%;
   white-space: nowrap;
   transform: translateX(-50%)
 }
+.attribution{
+  bottom: 10px;
+}
+.icons{
+  bottom: 30px;
+  img{
+    padding: 0 10px;
+    cursor: pointer;
+  }
+}
+
 
 @import './components/background.scss';
 @import './components/countdown.scss';
