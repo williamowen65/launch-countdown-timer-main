@@ -1,3 +1,5 @@
+import {DateTime} from 'luxon';
+
 export default class Box {
   containerEl: HTMLDivElement;
   constructor(public type: string) {
@@ -8,7 +10,9 @@ export default class Box {
   }
 
   setTime = () => {
-
+    const {day,second, hour, minute} = DateTime.now().minus({ days: 14 })
+    console.log(day, hour, minute, second);
+    
   }
 
   insertEls = (el1: HTMLDivElement, el2: HTMLDivElement) => {
