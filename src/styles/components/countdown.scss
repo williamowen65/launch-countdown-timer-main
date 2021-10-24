@@ -56,9 +56,9 @@
         position: absolute;
         border-radius: 0 50% 50% 0;
         width:5px;
-        height:10px;
+        height:0.4rem;
         background: hsl(234, 17%, 12%);
-        transform: translate(-72px, 67px);
+        transform: translate(-3rem, 2.8rem);
         z-index: 1;
       }
       &::after{
@@ -66,9 +66,9 @@
         position: absolute;
         border-radius: 50% 0 0 50%;
         width:5px;
-        height:10px;
+        height:0.4rem;
         background: hsl(234, 17%, 12%);
-        transform: translate(67px, -5px);
+        transform: translate(2.8rem, -0.2rem);
       }
     }
     .label {
