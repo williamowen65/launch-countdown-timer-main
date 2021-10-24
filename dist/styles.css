@@ -9,8 +9,14 @@ body h1, body .countdown {
 
 h1 {
   text-align: center;
-  margin: 0;
+  margin: 0 20px;
   color: white;
+  transition: font-size 0.5s;
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
 }
 
 .attribution, .icons {
@@ -23,6 +29,13 @@ h1 {
 
 .attribution {
   bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+.attribution span {
+  padding: 0 5px;
 }
 
 .icons {
@@ -40,24 +53,22 @@ body {
   display: flex;
   flex-direction: column;
   background: #191a24;
-  background-image: url("bg-stars.svg");
-  background-repeat: repeat-y;
-  background-size: contain;
+  background-image: url("pattern-hills.svg"), url("bg-stars.svg");
+  background-repeat: no-repeat, repeat-y;
+  background-size: 836px auto;
+  background-position: bottom;
 }
-body .background-stars {
-  position: absolute;
-  width: 100vw;
+@media screen and (min-width: 800px) {
+  body {
+    background-size: contain;
+  }
 }
-body .background-hills {
-  width: 100vw;
-  position: absolute;
-  bottom: 0;
-}
-body .hero {
+
+.hero {
   height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .countdown {

@@ -9,8 +9,12 @@ body {
 
 h1{
   text-align: center;
-  margin: 0;
+  margin: 0 20px;
   color: hsl(0, 0%, 100%);
+  @media screen and (max-width: 600px) {
+    font-size: 20px;
+  }
+  transition: font-size 0.5s;
 }
 
 
@@ -24,6 +28,13 @@ h1{
 }
 .attribution{
   bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  span {
+    padding: 0 5px;
+  }
 }
 .icons{
   bottom: 35px;

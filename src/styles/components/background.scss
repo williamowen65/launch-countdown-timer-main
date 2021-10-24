@@ -5,26 +5,25 @@ body {
   flex-direction: column;
   // justify-content: center;
   background: hsl(234, 17%, 12%);
-  background-image: url('bg-stars.svg');
-  background-repeat: repeat-y;
-  background-size: contain;
-  .background-stars{
-    position: absolute;
-    width: 100vw;
+  background-image: url('pattern-hills.svg'), url('bg-stars.svg');
+  background-repeat: no-repeat, repeat-y;
+  background-size: 836px auto;
+  @media screen and (min-width: 800px) {
+    background-size: contain;
   }
-  .background-hills{
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
-    // min-width: 1200px;
-    // left: 50%;
-    // transform: translateX(-50%);
-    // overflow: hidden;
-  }
-  .hero{
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  background-position: bottom;
+  // .background-stars{
+  //   position: absolute;
+  //   width: 100vw;
+  // }
+  // .background-hills{
+  //   width: 100vw;
+  //   position: absolute;
+  //   bottom: 0;
+  //   min-width: 1200px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   overflow: hidden;
+  // }
+
 }

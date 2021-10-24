@@ -1,3 +1,9 @@
+.hero{
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .countdown{
   display: flex;
   justify-content: center;
