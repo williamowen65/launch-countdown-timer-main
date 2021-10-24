@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | Launch countdown timer</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -13,15 +13,18 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+  <script src="./main.js" defer></script>
 </head>
 <body>
 
-  We're launching soon
+  <h1>We're launching soon</h1>
 
-  Days
-  Hours
-  Minutes
-  Seconds
+  <div class="countdown">
+    <div class="box">Days</div>
+    <div class="box">Hours</div>
+    <div class="box">Minutes</div>
+    <div class="box">Seconds</div>
+  </div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
