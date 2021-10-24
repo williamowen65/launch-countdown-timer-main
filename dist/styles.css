@@ -1,5 +1,11 @@
 :root {
-  font-size: 24px;
+  font-size: 12px;
+  transition: all 0.5s;
+}
+@media screen and (min-width: 600px) {
+  :root {
+    font-size: 24px;
+  }
 }
 
 body {
@@ -15,13 +21,7 @@ h1 {
   text-align: center;
   margin: 0 20px;
   color: white;
-  font-size: 1.3rem;
-  transition: font-size 0.5s;
-}
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 1rem;
-  }
+  font-size: 1.6rem;
 }
 
 .attribution, .icons {
@@ -82,15 +82,15 @@ body {
 }
 .countdown .container {
   max-width: 100vw;
-  padding: 0 20px;
+  padding: 0 0.5rem;
   overflow: hidden;
   font-size: 0.55rem;
   text-align: center;
 }
 .countdown .container .box {
   background: black;
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   margin: 0 auto;
   margin-bottom: 30px;
 }

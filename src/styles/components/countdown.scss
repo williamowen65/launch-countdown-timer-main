@@ -9,12 +9,12 @@
   justify-content: center;
   .container {
     max-width: 100vw;
-    padding: 0 20px;
+    padding: 0 0.5rem;
     overflow: hidden;
     font-size: 0.55rem;
     text-align: center;
     .box{
-      $box-size: 5rem;
+      $box-size: 6rem;
       background: black;
       width: $box-size;
       height: $box-size;
