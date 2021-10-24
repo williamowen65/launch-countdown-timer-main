@@ -1,5 +1,6 @@
 export default class Box {
-  constructor() {
+  constructor(public type: string) {
+    console.log('box made', this.type);
     
   }
 }
