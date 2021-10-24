@@ -1,17 +1,22 @@
 body {
   margin: 0;
+  font-family: 'Red Hat Text', sans-serif;
+  text-transform: uppercase;
+  h1, .countdown {
+    letter-spacing: 4px;
+  }
 }
 
 h1{
   text-align: center;
   margin: 0;
+  color: hsl(0, 0%, 100%);
 }
 
-.icons {
 
-}
 
 .attribution, .icons {
+  letter-spacing: 1px;
   position: absolute;
   left: 50%;
   white-space: nowrap;
@@ -21,8 +26,9 @@ h1{
   bottom: 10px;
 }
 .icons{
-  bottom: 30px;
+  bottom: 35px;
   img{
+    transform: scale(0.8);
     padding: 0 10px;
     cursor: pointer;
   }

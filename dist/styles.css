@@ -1,13 +1,20 @@
 body {
   margin: 0;
+  font-family: "Red Hat Text", sans-serif;
+  text-transform: uppercase;
+}
+body h1, body .countdown {
+  letter-spacing: 4px;
 }
 
 h1 {
   text-align: center;
   margin: 0;
+  color: white;
 }
 
 .attribution, .icons {
+  letter-spacing: 1px;
   position: absolute;
   left: 50%;
   white-space: nowrap;
@@ -19,18 +26,19 @@ h1 {
 }
 
 .icons {
-  bottom: 30px;
+  bottom: 35px;
 }
 .icons img {
+  transform: scale(0.8);
   padding: 0 10px;
   cursor: pointer;
 }
 
 body {
+  overflow: hidden;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background: #191a24;
   background-image: url("bg-stars.svg");
   background-repeat: repeat-y;
@@ -44,6 +52,12 @@ body .background-hills {
   width: 100vw;
   position: absolute;
   bottom: 0;
+}
+body .hero {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .countdown {

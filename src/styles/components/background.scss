@@ -1,8 +1,9 @@
 body {
+  overflow: hidden;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   background: hsl(234, 17%, 12%);
   background-image: url('bg-stars.svg');
   background-repeat: repeat-y;
@@ -15,5 +16,15 @@ body {
     width: 100vw;
     position: absolute;
     bottom: 0;
+    // min-width: 1200px;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // overflow: hidden;
+  }
+  .hero{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
