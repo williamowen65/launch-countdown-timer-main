@@ -35,6 +35,19 @@
       //   from{transform:rotate3d(0)}
       //   to{transform:rotate3d(1,2,0,60deg)}
       // }
+        position: relative;
+      & .top {
+        background: blue;
+        width: 100%;
+        height: 50%;
+      }
+      & .bottom {
+        background: rgb(200, 200, 212);
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+      }
     }
     .label {
       color: hsl(237, 18%, 59%);
