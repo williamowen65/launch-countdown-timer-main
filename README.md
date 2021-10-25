@@ -43,8 +43,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Check it out!](https://williamowen65.github.io/launch-countdown-timer-main/dist/)
+- Solution Code: [GitHub](https://github.com/williamowen65/launch-countdown-timer-main)
 
 <br>
 <br>
