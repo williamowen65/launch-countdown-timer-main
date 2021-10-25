@@ -7,8 +7,10 @@ export default class Box {
   bottom: HTMLDivElement;
   topNum: HTMLDivElement;
   bottomNum: HTMLDivElement;
-  topNext: HTMLDivElement;
-  topNextNum: HTMLDivElement;
+  nextTop: HTMLDivElement;
+  nextTopNum: HTMLDivElement;
+  nextBottom: HTMLDivElement;
+  nextBottomNum: HTMLDivElement;
   constructor(public type: string) {
     this.containerEl = document.querySelector(`.box.${this.type}`)
     console.log('box made', this.type, this.containerEl);
@@ -18,10 +20,11 @@ export default class Box {
 
   flip = () => {
     this.top.setAttribute('class','top flip')
-    // this.topNext.setAttribute('class','top next show')
+    // this.top.innerText = '' + (+this.top.innerText - 1);
+    // this.nextTop.setAttribute('class','top next show')
     setTimeout(() => {
       this.top.setAttribute('class', 'top')
-      // this.topNext.setAttribute('class','top next')
+      // this.nextTop.setAttribute('class','top next')
     },500)
   }
 
@@ -47,15 +50,20 @@ export default class Box {
   //  if(this.type == 'seconds'){
   //    this.flip()
   //  }
-  console.log(this.topNext);
+  // console.log(this.nextTop);
   
   if(typeTime === 0) {
-    this.topNext.innerText = `59`
+    this.nextTopNum.innerText = `59`
+    this.nextBottomNum.innerText = '59'
   } else {
-    this.topNext.innerText = `${typeTime - 1}`
+    this.nextTopNum.innerText = `${typeTime - 1}`
+    this.nextBottomNum.innerText = `${typeTime - 1}`
   }
     this.topNum.innerText = '' + typeTime
-    this.bottomNum.innerText = '' + typeTime
+    setTimeout(()=>{
+
+      this.bottomNum.innerText = '' + typeTime
+    },1)
   
   }
 
@@ -81,13 +89,15 @@ export default class Box {
     }, 1000)
   }
 
-  insertEls = (el1: HTMLDivElement, el2: HTMLDivElement, el3: HTMLDivElement) => {
+  insertEls = (el1: HTMLDivElement, el2: HTMLDivElement, el3: HTMLDivElement, el4: HTMLDivElement) => {
     this.containerEl.insertAdjacentElement('afterbegin', el1)
+    this.containerEl.insertAdjacentElement('afterbegin', el4)
     this.containerEl.insertAdjacentElement('afterbegin', el3)
     this.containerEl.insertAdjacentElement('beforeend', el2)
 
     const top = this.containerEl.querySelector('.top')
-    const topNext = this.containerEl.querySelector('.next')
+    const nextTop = this.containerEl.querySelector('.nextTop')
+    const nextBottom = this.containerEl.querySelector('.nextBottom')
     const bottom = this.containerEl.querySelector('.bottom')
 
     const timeDiv = document.createElement('div')
@@ -96,28 +106,37 @@ export default class Box {
 
     const timeDiv3 = document.createElement('div')
     timeDiv3.setAttribute('class','time')
-    topNext.insertAdjacentElement('beforeend', timeDiv3)
+    nextTop.insertAdjacentElement('beforeend', timeDiv3)
 
     const timeDiv2 = document.createElement('div')
     timeDiv2.setAttribute('class','time')
     bottom.insertAdjacentElement('beforeend', timeDiv2)
+    
+    const timeDiv4 = document.createElement('div')
+    timeDiv4.setAttribute('class','time')
+    nextBottom.insertAdjacentElement('beforeend', timeDiv4)
 
     this.topNum = this.containerEl.querySelector('.top .time')
     this.bottomNum = this.containerEl.querySelector('.bottom .time')
     this.top = this.containerEl.querySelector('.top')
-    this.topNext = this.containerEl.querySelector('.next .time')
+    this.nextTop = this.containerEl.querySelector('.nextTop')
+    this.nextTopNum = this.containerEl.querySelector('.nextTop .time')
     this.bottom = this.containerEl.querySelector('.bottom')
+    this.nextBottom = this.containerEl.querySelector('.nextBottom')
+    this.nextBottomNum = this.containerEl.querySelector('.nextBottom .time')
   }
 
   createEls = () => {
     const topDiv = document.createElement('div')
     topDiv.setAttribute('class', 'top');
     const topNextDiv = document.createElement('div')
-    topNextDiv.setAttribute('class', 'next');
+    topNextDiv.setAttribute('class', 'nextTop');
     const bottomDiv = document.createElement('div')
     bottomDiv.setAttribute('class', 'bottom');
+    const bottomNextDiv = document.createElement('div')
+    bottomNextDiv.setAttribute('class', 'nextBottom');
     
-    this.insertEls(topDiv, bottomDiv, topNextDiv)
+    this.insertEls(topDiv, bottomDiv, topNextDiv, bottomNextDiv)
   }
   
   configure = () => {

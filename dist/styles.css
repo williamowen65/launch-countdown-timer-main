@@ -134,16 +134,41 @@ body {
 .countdown .container .box div {
   overflow: hidden;
 }
-.countdown .container .box .top, .countdown .container .box .next {
+.countdown .container .box .top {
+  z-index: 2;
+}
+.countdown .container .box .top, .countdown .container .box .nextTop, .countdown .container .box .nextBottom {
   border-radius: 5px;
   background: #1e1f29;
   width: 100%;
   height: 50%;
   position: relative;
 }
-.countdown .container .box .top.flip, .countdown .container .box .next.flip {
+.countdown .container .box .top.nextTop, .countdown .container .box .top.nextBottom, .countdown .container .box .nextTop.nextTop, .countdown .container .box .nextTop.nextBottom, .countdown .container .box .nextBottom.nextTop, .countdown .container .box .nextBottom.nextBottom {
+  position: absolute;
+  top: 0;
+}
+.countdown .container .box .top.flip {
   transform-origin: center bottom;
   animation: rotate3d 1s forwards;
+  z-index: 1;
+}
+@keyframes rotate3d {
+  from {
+    transform: rotate3d(0);
+  }
+  to {
+    transform: rotate3d(1, 0, 0, -180deg);
+    background: #2c2e44;
+  }
+}
+.countdown .container .box .nextBottom .time {
+  transform: rotateX(180deg);
+}
+.countdown .container .box .nextBottom.flip {
+  transform-origin: center bottom;
+  animation: rotate3d 1s forwards;
+  z-index: 2;
 }
 @keyframes rotate3d {
   from {
@@ -154,10 +179,6 @@ body {
     background: #2c2e44;
     color: transparent;
   }
-}
-.countdown .container .box .top.next, .countdown .container .box .next.next {
-  position: absolute;
-  top: 0;
 }
 .countdown .container .box .bottom {
   border-radius: 5px;

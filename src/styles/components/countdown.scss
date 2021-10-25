@@ -53,28 +53,18 @@
         overflow: hidden;
       }
       position: relative;
-      & .top, .next {
+      & .top{
+        z-index: 2;
+      }
+      & .top, .nextTop, .nextBottom {
         border-radius: 5px;
         background: hsl(235, 16%, 14%);
         width: 100%;
         height: 50%;
         // z-index: 3;
         position: relative;
-        &.flip {
-          transform-origin: center bottom;
-          animation: rotate3d 1s forwards;
-          // z-index: -1;
-          @keyframes rotate3d{
-           from{transform:rotate3d(0)}
-           to{
-             transform:rotate3d(1,0,0,-180deg);
-             background: hsl(235, 21%, 22%);
-             color: transparent;
-            //  opacity: 0;
-            }
-          }
-        }
-        &.next {
+        
+        &.nextTop, &.nextBottom {
           position: absolute;
           top: 0;
           // z-index: 2;
@@ -87,6 +77,43 @@
           //     }
           //   }
           // }
+        }
+      }
+      & .top {
+        &.flip {
+          transform-origin: center bottom;
+          animation: rotate3d 1s forwards;
+          z-index: 1;
+          @keyframes rotate3d{
+           from{transform:rotate3d(0)}
+           to{
+             transform:rotate3d(1,0,0,-180deg);
+             background: hsl(235, 21%, 22%);
+            //  color: transparent;
+            //  opacity: 0;
+            // z-index: 1;
+            }
+          }
+        }
+      }
+      .nextBottom {
+        .time{
+          transform: rotateX(180deg) ;
+        }
+        &.flip {
+          transform-origin: center bottom;
+          animation: rotate3d 1s forwards;
+          z-index: 2;
+          @keyframes rotate3d{
+           from{transform:rotate3d(0)}
+           to{
+             transform:rotate3d(1,0,0,-180deg);
+             background: hsl(235, 21%, 22%);
+             color: transparent;
+            //  opacity: 0;
+            // z-index: 3;
+            }
+          }
         }
       }
       & .bottom {
