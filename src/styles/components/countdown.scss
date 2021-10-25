@@ -98,6 +98,7 @@
       }
       .nextBottom {
         .time{
+          opacity: 0;
           transform: rotateX(180deg) ;
         }
         &.flip {
@@ -113,6 +114,10 @@
             //  opacity: 0;
             // z-index: 3;
             }
+          }
+          .time{
+            opacity: 1;
+            transition: opacity 1s;
           }
         }
       }

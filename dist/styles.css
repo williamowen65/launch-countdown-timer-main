@@ -163,6 +163,7 @@ body {
   }
 }
 .countdown .container .box .nextBottom .time {
+  opacity: 0;
   transform: rotateX(180deg);
 }
 .countdown .container .box .nextBottom.flip {
@@ -179,6 +180,10 @@ body {
     background: #2c2e44;
     color: transparent;
   }
+}
+.countdown .container .box .nextBottom.flip .time {
+  opacity: 1;
+  transition: opacity 1s;
 }
 .countdown .container .box .bottom {
   border-radius: 5px;

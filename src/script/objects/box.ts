@@ -20,9 +20,11 @@ export default class Box {
 
   flip = () => {
     this.top.setAttribute('class','top flip')
+    this.nextBottom.setAttribute('class','nextBottom flip')
     // this.top.innerText = '' + (+this.top.innerText - 1);
     // this.nextTop.setAttribute('class','top next show')
     setTimeout(() => {
+      this.nextBottom.setAttribute('class','nextBottom')
       this.top.setAttribute('class', 'top')
       // this.nextTop.setAttribute('class','top next')
     },500)
@@ -52,6 +54,7 @@ export default class Box {
   //  }
   // console.log(this.nextTop);
   
+  setTimeout(()=>{
   if(typeTime === 0) {
     this.nextTopNum.innerText = `59`
     this.nextBottomNum.innerText = '59'
@@ -60,10 +63,9 @@ export default class Box {
     this.nextBottomNum.innerText = `${typeTime - 1}`
   }
     this.topNum.innerText = '' + typeTime
-    setTimeout(()=>{
 
       this.bottomNum.innerText = '' + typeTime
-    },1)
+    },500)
   
   }
 
@@ -79,14 +81,14 @@ export default class Box {
     
    
     setInterval(() => {
-      this.timeLeft = this.timeLeft.minus({seconds: 1})
-        if(this.type == 'seconds'){
-          // this.flip()
-        }
+      if(this.type == 'seconds'){
+        this.flip()
+      }
       // setTimeout(() => {
-        // this.printTime();
-      // },1)
-    }, 1000)
+        this.timeLeft = this.timeLeft.minus({seconds: 1})
+        this.printTime();
+      // },650)
+    }, 1500)
   }
 
   insertEls = (el1: HTMLDivElement, el2: HTMLDivElement, el3: HTMLDivElement, el4: HTMLDivElement) => {
