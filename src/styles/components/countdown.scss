@@ -19,6 +19,10 @@
     }
     overflow: hidden;
     font-size: 0.55rem;
+    transition: font-size 1s;
+    @media screen and (max-width: 650px) {
+      font-size: 0.8rem;
+    }
     text-align: center;
     .box{
       $box-size: 6rem;
@@ -38,10 +42,11 @@
       //   to{transform:rotate3d(1,2,0,60deg)}
       // }
       .time{
-        font-size: 4rem;
+        font-size: 3.3rem;
         // transform: translateY(5px);
         position: relative;
-        top: 7px;
+        top: 0.8rem;
+        left: 2px;
         color:hsl(345, 65%, 60%);
       }
       position: relative;
