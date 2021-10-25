@@ -32,6 +32,11 @@ export default class Box {
       default:
         break;
     }
+    this.top.setAttribute('class','top flip')
+    setTimeout(() => {
+
+      this.top.setAttribute('class', 'top')
+    },500)
 
     this.topNum.innerText = '' + typeTime
     this.bottomNum.innerText = '' + typeTime
@@ -51,7 +56,7 @@ export default class Box {
    
     setInterval(() => {
       this.timeLeft = this.timeLeft.minus({seconds: 1})
-      this.top.setAttribute('class','top flip')
+     
       this.printTime();
     }, 1000)
   }
