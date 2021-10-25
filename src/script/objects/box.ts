@@ -14,6 +14,13 @@ export default class Box {
     this.configure();
   }
 
+  flip = () => {
+    this.top.setAttribute('class','top flip')
+    setTimeout(() => {
+      this.top.setAttribute('class', 'top')
+    },500)
+  }
+
   printTime = () => {
     let typeTime: number | DateTime;
     switch (this.type) {
@@ -32,11 +39,10 @@ export default class Box {
       default:
         break;
     }
-    this.top.setAttribute('class','top flip')
-    setTimeout(() => {
 
-      this.top.setAttribute('class', 'top')
-    },500)
+   if(this.type == 'seconds'){
+     this.flip()
+   }
 
     this.topNum.innerText = '' + typeTime
     this.bottomNum.innerText = '' + typeTime
