@@ -11,6 +11,7 @@ export default class Box {
   nextTopNum: HTMLDivElement;
   nextBottom: HTMLDivElement;
   nextBottomNum: HTMLDivElement;
+  typeTime: number | DateTime;
   constructor(public type: string) {
     this.containerEl = document.querySelector(`.box.${this.type}`)
     console.log('box made', this.type, this.containerEl);
@@ -31,19 +32,31 @@ export default class Box {
   }
 
   printTime = () => {
-    let typeTime: number | DateTime;
+    // let typeTime: number | DateTime;
     switch (this.type) {
       case 'days':
-        typeTime = this.timeLeft.day
+        if(this.typeTime != this.timeLeft.day){
+          this.typeTime = this.timeLeft.day
+          this.flip()
+        }
         break;
         case 'hours':
-        typeTime =  this.timeLeft.hour
+          if(this.typeTime != this.timeLeft.hour){
+            this.typeTime = this.timeLeft.hour
+            this.flip()
+          }
         break;
         case 'minutes':
-        typeTime = this.timeLeft.minute
+          if(this.typeTime != this.timeLeft.minute){
+            this.typeTime = this.timeLeft.minute
+            this.flip()
+          }
         break;
         case 'seconds':
-        typeTime = this.timeLeft.second
+          if(this.typeTime != this.timeLeft.second){
+            this.typeTime = this.timeLeft.second
+            this.flip()
+          }
         break;
       default:
         break;
@@ -55,28 +68,35 @@ export default class Box {
   // console.log(this.nextTop);
   
   setTimeout(()=>{
-  if(typeTime === 0) {
+  if(this.typeTime === 0) {
     this.nextTopNum.innerText = `59`
     this.nextBottomNum.innerText = '59'
   } else {
-    this.nextTopNum.innerText = `${typeTime - 1}`
-    this.nextBottomNum.innerText = `${typeTime - 1}`
+    this.nextTopNum.innerText = `${this.typeTime - 1}`
+    this.nextBottomNum.innerText = `${this.typeTime - 1}`
   }
-    this.topNum.innerText = '' + typeTime
+    this.topNum.innerText = '' + this.typeTime
 
-      this.bottomNum.innerText = '' + typeTime
+      this.bottomNum.innerText = '' + this.typeTime
     },500)
   
   }
 
   synchronizeFlips = () => {
     setInterval(() => {
-      if(this.type == 'seconds'){
-        this.flip()
-      }
+      // if(this.type == 'seconds'){
+      //   this.flip()
+      // }
         this.timeLeft = this.timeLeft.minus({seconds: 1})
         this.printTime();
     }, 1000)
+    // setInterval(() => {
+    //   if(this.type == 'minutes'){
+    //     this.flip()
+    //   }
+    //     // this.timeLeft = this.timeLeft.minus({seconds: 1})
+    //     this.printTime();
+    // }, 1000000)
   }
 
   getTime = () => {
@@ -86,7 +106,27 @@ export default class Box {
     // const {day,hour,minute,second} = (DateTime.fromMillis(interval.count()));
     // console.log(day,hour,minute,second);
     this.timeLeft = DateTime.fromMillis(interval.count())
+
+///Sets typeTime so flip doesnt start early
+    switch (this.type) {
+      case 'days':
+        this.typeTime = this.timeLeft.day
+        break;
+        case 'hours':
+        this.typeTime =  this.timeLeft.hour
+        break;
+        case 'minutes':
+        this.typeTime = this.timeLeft.minute
+        break;
+        case 'seconds':
+        this.typeTime = this.timeLeft.second
+        break;
+      default:
+        break;
+    }
+
     this.printTime();
+    // this.flip()
     // console.log(this.timeLeft);
     
    
