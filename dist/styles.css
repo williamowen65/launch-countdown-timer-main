@@ -137,6 +137,7 @@ body {
   width: 100%;
   height: 50%;
   z-index: 2;
+  position: relative;
 }
 .countdown .container .box .top.flip {
   transform-origin: center bottom;
@@ -148,6 +149,7 @@ body {
   }
   to {
     transform: rotate3d(1, 0, 0, -180deg);
+    background: #2c2e44;
   }
 }
 .countdown .container .box .bottom {

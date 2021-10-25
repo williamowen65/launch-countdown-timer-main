@@ -3,8 +3,10 @@ import {DateTime, Duration, Interval} from 'luxon';
 export default class Box {
   containerEl: HTMLDivElement;
   timeLeft: number | DateTime;
-  upper: HTMLDivElement;
-  lower: HTMLDivElement;
+  top: HTMLDivElement;
+  bottom: HTMLDivElement;
+  topNum: HTMLDivElement;
+  bottomNum: HTMLDivElement;
   constructor(public type: string) {
     this.containerEl = document.querySelector(`.box.${this.type}`)
     console.log('box made', this.type, this.containerEl);
@@ -31,8 +33,8 @@ export default class Box {
         break;
     }
 
-    this.upper.innerText = '' + typeTime
-    this.lower.innerText = '' + typeTime
+    this.topNum.innerText = '' + typeTime
+    this.bottomNum.innerText = '' + typeTime
   
   }
 
@@ -49,6 +51,7 @@ export default class Box {
    
     setInterval(() => {
       this.timeLeft = this.timeLeft.minus({seconds: 1})
+      this.top.setAttribute('class','top flip')
       this.printTime();
     }, 1000)
   }
@@ -65,8 +68,10 @@ export default class Box {
     timeDiv2.setAttribute('class','time')
     top.insertAdjacentElement('beforeend', timeDiv)
     bottom.insertAdjacentElement('beforeend', timeDiv2)
-    this.upper = this.containerEl.querySelector('.top .time')
-    this.lower = this.containerEl.querySelector('.bottom .time')
+    this.topNum = this.containerEl.querySelector('.top .time')
+    this.bottomNum = this.containerEl.querySelector('.bottom .time')
+    this.top = this.containerEl.querySelector('.top')
+    this.bottom = this.containerEl.querySelector('.bottom')
   }
 
   createEls = () => {
