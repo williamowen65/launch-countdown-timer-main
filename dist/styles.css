@@ -40,6 +40,16 @@ h1 {
   padding-bottom: 3rem;
 }
 
+.readme {
+  font-size: 15px;
+  padding: 5px;
+  color: #8486a9;
+  text-decoration: none;
+}
+.readme:hover {
+  text-decoration: underline;
+}
+
 .attribution, .icons {
   letter-spacing: 1px;
   position: absolute;
@@ -54,6 +64,10 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  flex-direction: column;
+}
+.attribution .ad {
+  color: #8486a9;
 }
 .attribution span {
   padding: 0 5px;

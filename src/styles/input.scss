@@ -37,7 +37,15 @@ h1{
   // transition: font-size 0.5s;
 }
 
-
+.readme {
+  font-size: 15px;
+  padding: 5px;
+  color:hsl(237, 18%, 59%);
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+  }
+}
 
 .attribution, .icons {
   letter-spacing: 1px;
@@ -52,6 +60,10 @@ h1{
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  flex-direction: column;
+  .ad {
+    color: hsl(237, 18%, 59%);
+  }
   span {
     padding: 0 5px;
   }
