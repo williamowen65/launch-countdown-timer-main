@@ -69,6 +69,16 @@ export default class Box {
   
   }
 
+  synchronizeFlips = () => {
+    setInterval(() => {
+      if(this.type == 'seconds'){
+        this.flip()
+      }
+        this.timeLeft = this.timeLeft.minus({seconds: 1})
+        this.printTime();
+    }, 1000)
+  }
+
   getTime = () => {
     // const startDate = DateTime.now().minus({ days: 14 })
     const endDate = DateTime.now()
@@ -80,15 +90,8 @@ export default class Box {
     // console.log(this.timeLeft);
     
    
-    setInterval(() => {
-      if(this.type == 'seconds'){
-        this.flip()
-      }
-      // setTimeout(() => {
-        this.timeLeft = this.timeLeft.minus({seconds: 1})
-        this.printTime();
-      // },650)
-    }, 1500)
+    this.synchronizeFlips()
+    
   }
 
   insertEls = (el1: HTMLDivElement, el2: HTMLDivElement, el3: HTMLDivElement, el4: HTMLDivElement) => {
