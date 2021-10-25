@@ -72,9 +72,14 @@ h1 {
 .attribution span {
   padding: 0 5px;
 }
+.attribution .foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .icons {
-  bottom: 35px;
+  bottom: 45px;
 }
 .icons img {
   transform: scale(0.8);

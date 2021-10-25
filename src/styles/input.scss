@@ -67,9 +67,14 @@ h1{
   span {
     padding: 0 5px;
   }
+  .foot{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .icons{
-  bottom: 35px;
+  bottom: 45px;
   img{
     transform: scale(0.8);
     padding: 0 10px;
