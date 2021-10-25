@@ -37,7 +37,7 @@ export default class Box {
         typeTime = this.timeLeft.day
         break;
         case 'hours':
-        typeTime = this.timeLeft.hour > 12 ? this.timeLeft.hour - 12 : this.timeLeft.hour
+        typeTime =  this.timeLeft.hour
         break;
         case 'minutes':
         typeTime = this.timeLeft.minute
