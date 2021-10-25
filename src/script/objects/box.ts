@@ -44,7 +44,7 @@ export default class Box {
     // console.log(day,hour,minute,second);
     this.timeLeft = DateTime.fromMillis(interval.count())
     this.printTime();
-    console.log(this.timeLeft);
+    // console.log(this.timeLeft);
     
    
     setInterval(() => {

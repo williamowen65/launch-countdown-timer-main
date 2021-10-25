@@ -26,13 +26,13 @@
     text-align: center;
     .box{
       $box-size: 6rem;
-      background: black;
+      background: hsl(235, 16%, 14%);
       min-width: $box-size;
       height: $box-size;
       margin: 0 auto;
       margin-bottom: 30px;
       border-radius: 5px;
-      overflow: hidden;
+      // overflow: hidden;
 
       // Flip will be some combo of....
       // transform-origin: bottom right 60px;
@@ -51,19 +51,22 @@
       }
       position: relative;
       & .top {
+        border-radius: 5px;
         background: hsl(235, 16%, 14%);
         width: 100%;
         height: 50%;
+        z-index: 2;
         &.flip {
-          transform-origin: bottom;
+          transform-origin: center bottom;
           animation: rotate3d 1s forwards;
           @keyframes rotate3d{
            from{transform:rotate3d(0)}
-           to{transform:rotate3d(1,2,0,60deg)}
+           to{transform:rotate3d(1,0,0,-180deg)}
           }
         }
       }
       & .bottom {
+        border-radius: 5px;
         background: hsl(235, 21%, 22%);
         width: 100%;
         height: 50%;
