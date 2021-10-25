@@ -137,6 +137,18 @@ body {
   width: 100%;
   height: 50%;
 }
+.countdown .container .box .top.flip {
+  transform-origin: bottom;
+  animation: rotate3d 1s forwards;
+}
+@keyframes rotate3d {
+  from {
+    transform: rotate3d(0);
+  }
+  to {
+    transform: rotate3d(1, 2, 0, 60deg);
+  }
+}
 .countdown .container .box .bottom {
   background: #2c2e44;
   width: 100%;
